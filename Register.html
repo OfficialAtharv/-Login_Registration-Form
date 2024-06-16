@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="registration.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body class="body">
+  <div class="container">
+    <form class="form">
+      <u><h2 class="mainhading">Registration Form</h2></u>
+      <label>Enter Your Name :</label>
+      <input type="text"  id="name" required>
+      <label>Enter your contact details :</label>
+      <input type="text"  id="contact" required>
+      <label>Enter Your email address :</label>
+      <input type="email"  id="email" required>
+      <label>Password : </label>
+      <input type="password" id="password"  required>
+      <label>Confirm Password : </label>
+      <input type="password" id="confirmPassword"  required>
+      <button class="submit_btn" id="clicked" type="submit">Submit</button>
+      <a href="Login.html"><p class="p">Already Have an Account? Click here</p></a>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from submitting
+      var name = document.getElementById('name').value;
+      var contact = document.getElementById('contact').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (!name || !contact || !email || !password || !confirmPassword) {
+        alert('Please fill in all the fields.');
+        return; 
+      }
+
+     
+      window.location.href = 'Welcome.html';
+    });
+  </script>
+</body>
+</html>
